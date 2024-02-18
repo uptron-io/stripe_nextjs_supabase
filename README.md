@@ -38,6 +38,9 @@ npx create-next-app@latest
 Contributions to enhance the functionality or efficiency of this code are welcome. 
 Please submit a pull request for review.
 
+## License
+MIT
+
 ## Support
 For support, please open an issue in the GitHub repository or contact the repository owner directly.
 
