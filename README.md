@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Stripe + Supabase = Everything you need to know
 
-## Getting Started
+## Overview
+Seamless Integration: Mastering Stripe Payments in Your Next.js Web Application with Supabase Backend.
 
-First, run the development server:
+Бесшовная интеграция: освоение Stripe Payments в вашем веб-приложении Next.js с помощью Supabase Backend.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Supabase
+Go to [Supabase](https://supabase.com)
+
+Command:
+```cmd
+supabase init
+supabase link --project-ref [your_project_id_here]
+
+supabase secrets list
+supabase secrets set STRIPE_SECRET_KEY=[YOUR_STRIPE_SECRET_KEY]
+supabase secrets set STRIPE_WEBHOOK_SIGNING_SECRET=[YOUR_STRIPE_WEBHOOK_SIGNING_SECRET]
+
+supabase functions new stripe_webhooks
+supabase functions new create_payment_intent
+
+supabase functions deploy create_payment_intent
+supabase functions deploy stripe_webhooks --no-verify-jwt
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Stripe
+Go to [Stripe](https://stripe.com)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## NextJS
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Create a new application
+```cmd
+npx create-next-app@latest
+```
 
-## Learn More
+## Contributing
+Contributions to enhance the functionality or efficiency of this code are welcome. 
+Please submit a pull request for review.
 
-To learn more about Next.js, take a look at the following resources:
+## Support
+For support, please open an issue in the GitHub repository or contact the repository owner directly.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Disclaimer
+This code is provided as-is with no warranty. Users should ensure they have the proper permissions to interact with Google Sheets API and handle user data responsibly.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
